@@ -6,7 +6,7 @@ function Home() {
       <section>
         <h1>Chronic Illness Support Chatbot</h1>
         <p>
-          Welcome to the Chronic Illness Support Chatbot.<br> I am here to provide support and answer your questions related to managing chronic illnesses.
+          Welcome to the Chronic Illness Support Chatbot.I am here to provide support and answer your questions related to managing chronic illnesses.
         </p>
       </section>
       <section>
