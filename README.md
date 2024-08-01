@@ -6,6 +6,8 @@ This project demonstrates how to implement a chatbot for chronic illness support
 
 Check out the live demo: https://chronic-illnesses-practice-hlk4.vercel.app/
 
+![Preview](preview.png)
+
 ### Set up Environment Variables
 
 1. Rename the `.env.example` file to `.env.local`:
