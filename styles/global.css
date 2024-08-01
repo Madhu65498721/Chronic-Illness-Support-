@@ -1,3 +1,4 @@
+/* Reset and global styles */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -10,103 +11,121 @@ body {
   overflow-x: hidden;
 }
 
-@font-face {
-  font-family: "ColfaxAI";
-  src: url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff2) format("woff2"),
-       url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff) format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "ColfaxAI";
-  src: url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff2) format("woff2"),
-       url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff) format("woff");
-  font-weight: bold;
-  font-style: normal;
-}
-
 body {
   font-size: 16px;
   line-height: 24px;
   color: #353740;
   font-family: "ColfaxAI", Helvetica, sans-serif;
 }
-h1 {
-  font-size: 28px; /* Adjusted to fit the chatbot's focus */
-  margin-bottom: 20px; /* Adjusted spacing */
-}
+
+/* Container styles */
 .wrapper {
   margin: 50px auto;
-  max-width: 600px; /* Adjusted width for better appearance */
+  max-width: 600px;
   padding: 0 15px;
 }
-section + section {
-  margin-top: 25px;
+
+/* Heading and introductory text */
+h1 {
+  font-size: 32px;
+  margin-bottom: 25px;
 }
+
+/* Dialogue container */
 .dialogue {
-  border-radius: 8px; /* Slightly rounded corners for a softer look */
+  border-radius: 8px;
   border: 1px solid lightgray;
-  padding: 20px; /* Reduced padding for compact view */
-  max-width: 100%; /* Ensure it fits within the container */
+  padding: 20px;
+  max-width: 100%;
   margin: 0 auto;
-  background-color: #f9f9f9; /* Light background for better contrast */
+  background-color: #f9f9f9;
 }
-.dialogue span {
-  clear: both;
-  display: block;
-}
+
+/* Message styles */
 .prompt {
-  border-radius: 8px; /* Match border radius with dialogue */
+  border-radius: 8px;
   border: 1px solid lightgray;
-  padding: 12px 20px; /* Reduced padding for compact look */
-  max-width: 100%; /* Ensure it fits within the container */
-  margin: 10px 0 15px;
-  background-color: #ffffff; /* Ensure prompt background is white */
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
 }
-.prompt.right .msg {
-  color: gray;
+
+.prompt.left {
+  align-self: flex-start;
 }
+
+.prompt.right {
+  align-self: flex-end;
+}
+
+.prompt .msg {
+  margin: 0;
+}
+
 .name {
   font-weight: bold;
 }
+
+/* Default questions */
+.default-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.default-questions button {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  background-color: #e0e0e0;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.default-questions button:hover {
+  background-color: #c0c0c0;
+}
+
+/* Input area styles */
 .question {
   display: flex;
-  flex-direction: column; /* Stack questions vertically */
-  gap: 10px; /* Space between buttons */
-  padding-top: 20px; /* Adjusted padding */
+  align-items: center;
+  margin-top: 15px;
 }
+
 input[type="text"] {
+  flex: 1;
   padding: 12px 16px;
   border: 1px solid #10a37f;
   border-radius: 4px;
   outline-color: #10a37f;
-  width: calc(100% - 100px); /* Adjusted width to fit better */
   font-size: 16px;
 }
+
 button {
-  padding: 12px 20px; /* Increased padding for better click area */
+  padding: 12px 16px;
   color: #fff;
   background-color: #10a37f;
   border: none;
   border-radius: 4px;
-  text-align: center;
-  cursor: pointer;
+  margin-left: 10px;
   text-transform: uppercase;
-}
-.left {
-  float: left;
+  cursor: pointer;
 }
 
-.right {
-  float: right;
-}
-
+/* Loader styles */
 .loader {
   display: inline-block;
   position: relative;
   width: 80px;
   height: 80px;
 }
+
 .loader div {
   position: absolute;
   top: 33px;
@@ -116,22 +135,27 @@ button {
   background: lightgray;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
+
 .loader div:nth-child(1) {
   left: 8px;
   animation: preloader1 0.6s infinite;
 }
+
 .loader div:nth-child(2) {
   left: 8px;
   animation: preloader2 0.6s infinite;
 }
+
 .loader div:nth-child(3) {
   left: 32px;
   animation: preloader2 0.6s infinite;
 }
+
 .loader div:nth-child(4) {
   left: 56px;
   animation: preloader3 0.6s infinite;
 }
+
 @keyframes preloader1 {
   0% {
     transform: scale(0);
@@ -140,6 +164,7 @@ button {
     transform: scale(1);
   }
 }
+
 @keyframes preloader3 {
   0% {
     transform: scale(1);
@@ -148,6 +173,7 @@ button {
     transform: scale(0);
   }
 }
+
 @keyframes preloader2 {
   0% {
     transform: translate(0, 0);
